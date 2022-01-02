@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "./proto;content";
+
+service Content {
+    rpc Query(ContentId) returns (ContentRep) {}
+}
+
+message ContentId {
+    int32 id = 1;
+}
+
+message ContentRep {
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
+    int32 userid = 4;
+}
+
+
+
