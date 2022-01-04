@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
 
 	pb "github.com/essayZW/microdemo/content/proto"
 )
@@ -21,6 +22,7 @@ func (content *Content) Query(ctx context.Context, id *pb.ContentId, resp *pb.Co
 	if int(id.Id) >= len(content.contents) {
 		return fmt.Errorf("Content %d does not exists", id.Id)
 	}
+	log.Printf("Query content id %d", id.Id)
 	c := content.contents[id.Id]
 	resp.Id = c.ID
 	resp.Name = c.Name

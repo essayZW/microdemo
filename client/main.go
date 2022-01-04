@@ -22,11 +22,13 @@ func main() {
 
 	client := pb.NewContentService("content", src.Client())
 
-	resp, err := client.Query(context.TODO(), &pb.ContentId{
-		Id: 1,
-	})
-	if err != nil {
-		log.Panicln(err)
+	for i := 0; i < 10; i++ {
+		resp, err := client.Query(context.TODO(), &pb.ContentId{
+			Id: 1,
+		})
+		if err != nil {
+			log.Panicln(err)
+		}
+		log.Println(resp)
 	}
-	log.Println(resp)
 }
