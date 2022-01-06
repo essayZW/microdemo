@@ -1,2 +1,2 @@
 # microdemo
-demo for Go-Micro V3
+demo for Go-Micro V4.5.0
