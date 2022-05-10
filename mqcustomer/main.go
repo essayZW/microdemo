@@ -11,7 +11,7 @@ import (
 func main() {
 
 	rabbitmqBroker := rabbitmq.NewBroker(
-		broker.Addrs("amqp://172.17.0.3:5672"),
+		broker.Addrs("amqp://172.17.0.4:5672"),
 		rabbitmq.DurableExchange(),
 	)
 	if err := rabbitmqBroker.Init(); err != nil {
